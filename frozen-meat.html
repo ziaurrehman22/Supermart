@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Frozen Meat | SUPER MART</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="category.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="top">FREE DELIVERY ON ORDERS ABOVE Rs. 2,000</div>
+    <header><a class="logo" href="index.html"><i class="fa-solid fa-basket-shopping"></i> SUPER<span>MART</span></a><a
+            class="cart-head" href="cart.html"><i class="fa-solid fa-cart-shopping"></i> View Cart</a></header>
+    <nav><a href="index.html">HOME</a><a href="snacks-chocolate.html">SNACKS & CHOCOLATE</a><a
+            href="grocery.html">GROCERY</a><a href="frozen-meat.html">FROZEN MEAT</a><a
+            href="vegetable.html">VEGETABLE</a><a href="dairy.html">DAIRY</a></nav>
+    <main class="category-page">
+        <div class="category-banner">
+            <p class="tag">SUPER MART</p>
+            <h1>Frozen Meat</h1>
+            <p>Quality products for your everyday shopping.</p>
+        </div>
+        <div id="products" class="product-grid"></div>
+    </main>
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+    <script>renderProducts('meat', 'fa-drumstick-bite')</script>
+</body>
+
+</html>

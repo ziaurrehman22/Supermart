@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Cart | SUPER MART</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="category.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="top">SUPER MART CART</div>
+    <main class="category-page"><a class="logo" href="index.html"><i class="fa-solid fa-basket-shopping"></i>
+            SUPER<span>MART</span></a>
+        <h1 style="margin:30px 0"> <i class="fa-solid fa-cart-shopping"></i> View Cart</h1>
+        <div id="cart"></div>
+    </main>
+    <script>let c = JSON.parse(localStorage.getItem('superMartCart')) || []; let box = document.getElementById('cart'); if (!c.length) box.innerHTML = '<h2>Your cart is empty.</h2>'; else { box.innerHTML = c.map((p, i) => `<div class="product-card" style="margin-bottom:15px;display:flex;align-items:center"><img style="width:120px;height:100px" src="${p.image}"><div class="product-info"><h3>${p.name}</h3><b>Rs. ${p.price}</b><button class="add-btn" onclick="removeItem(${i})">Remove</button></div></div>`).join('') } function removeItem(i) { c.splice(i, 1); localStorage.setItem('superMartCart', JSON.stringify(c)); location.reload() }</script>
+</body>
+
+</html>
