@@ -32,7 +32,8 @@ a {
     width: 100vw;
     height: 30px;
     position: relative;
-    animation: top 2s linear infinite;
+    animation: top 1.5s linear infinite;
+    letter-spacing: 1px;
 }
 
 
@@ -61,11 +62,28 @@ header {
     background: #fff
 }
 
+
 .logo {
     font-size: 25px;
     font-weight: 900;
     color: #14532d;
-    white-space: nowrap
+    position: relative;
+    text-decoration: none;
+}
+
+.logo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: #14532d;
+    transition: width 0.2s ease;
+}
+
+.logo:hover::after {
+    width: 100%;
 }
 
 .logo span {
