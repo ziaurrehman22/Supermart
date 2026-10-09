@@ -23,6 +23,34 @@ a {
     font-size: 13px
 }
 
+.top {
+    background: #14532d;
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+    font-size: 13px;
+    width: 100vw;
+    height: 30px;
+    position: relative;
+    animation: top 2s linear infinite;
+}
+
+
+@keyframes top {
+    0% {
+        transform: translateX(-4vw);
+    }
+
+    50% {
+        transform: translateX(4vw)
+    }
+
+    100% {
+        transform: translateX(-4vw);
+    }
+}
+
+
 header {
     max-width: 1250px;
     margin: auto;
@@ -314,6 +342,7 @@ img {
 
 /* Large screens */
 @media (min-width: 1400px) {
+
     .hero,
     .section,
     header {
@@ -524,7 +553,7 @@ img {
         line-height: 1.12;
     }
 
-    .hero-content > p:not(.tag) {
+    .hero-content>p:not(.tag) {
         font-size: 14px;
         line-height: 1.7;
     }
@@ -637,7 +666,7 @@ img {
         gap: 25px 18px;
     }
 
-    .footer-grid > div:first-child {
+    .footer-grid>div:first-child {
         grid-column: 1 / -1;
     }
 
