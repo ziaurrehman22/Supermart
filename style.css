@@ -290,64 +290,429 @@ footer {
     padding-top: 18px
 }
 
-@media(max-width:900px) {
+/* ================================
+   RESPONSIVE DESIGN - ALL DEVICES
+================================ */
+
+/* Prevent horizontal scrolling */
+html {
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-width: 320px;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Large screens */
+@media (min-width: 1400px) {
+    .hero,
+    .section,
     header {
-        flex-wrap: wrap
+        max-width: 1350px;
+    }
+
+    .hero-content {
+        padding: 75px;
+    }
+
+    .hero h1 {
+        font-size: 64px;
+    }
+}
+
+/* Laptop and small desktop */
+@media (max-width: 1200px) {
+    header {
+        gap: 18px;
+        padding: 18px 20px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .head-links {
+        gap: 14px;
+    }
+
+    nav a {
+        padding: 14px 12px;
+        font-size: 12px;
+    }
+
+    .hero-content {
+        padding: 45px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .offer {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .logo {
+        font-size: 24px;
     }
 
     .search {
         order: 3;
+        flex-basis: 100%;
         max-width: none;
-        flex-basis: 100%
     }
 
-    .category-grid {
-        grid-template-columns: repeat(2, 1fr)
+    .head-links {
+        margin-left: auto;
+    }
+
+    nav {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    nav a {
+        flex-shrink: 0;
+        padding: 14px 15px;
     }
 
     .hero {
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
+        min-height: auto;
+        margin: 22px auto;
+        gap: 0;
     }
 
     .hero-content {
-        border-radius: 22px 22px 0 0
-    }
-
-    .hero-pic img {
-        height: 300px;
-        border-radius: 0 0 22px 22px
-    }
-
-    .features {
-        grid-template-columns: repeat(2, 1fr)
-    }
-}
-
-@media(max-width:600px) {
-    .head-links span {
-        display: none
-    }
-
-    .category-grid,
-    .features {
-        grid-template-columns: 1fr
-    }
-
-    .hero-content {
-        padding: 40px 25px
+        padding: 45px 35px;
+        border-radius: 20px 20px 0 0;
     }
 
     .hero h1 {
-        font-size: 42px
+        font-size: 46px;
+    }
+
+    .hero-pic img {
+        height: 330px;
+        border-radius: 0 0 20px 20px;
+    }
+
+    .section {
+        margin: 50px auto;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .category-card img {
+        height: 200px;
     }
 
     .offer {
-        margin: 40px 20px;
-        padding: 30px;
-        display: block
+        padding: 35px;
+        gap: 20px;
+    }
+
+    .offer h2 {
+        font-size: 27px;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 600px) {
+    .top {
+        font-size: 11px;
+        padding: 10px 8px;
+    }
+
+    header {
+        padding: 15px;
+        gap: 14px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .head-links {
+        gap: 15px;
+    }
+
+    .head-links a {
+        gap: 4px;
+    }
+
+    .head-links i {
+        font-size: 19px;
+    }
+
+    .head-links span {
+        display: none;
+    }
+
+    .search input {
+        min-width: 0;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .search button {
+        flex-shrink: 0;
+        width: 48px;
+        cursor: pointer;
+    }
+
+    nav a {
+        padding: 13px 12px;
+        font-size: 11px;
+    }
+
+    .hero {
+        padding: 0 15px;
+        margin: 18px auto 35px;
+    }
+
+    .hero-content {
+        padding: 35px 22px;
+    }
+
+    .tag {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .hero h1 {
+        font-size: clamp(32px, 8vw, 42px);
+        line-height: 1.12;
+    }
+
+    .hero-content > p:not(.tag) {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .btn {
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+
+    .hero-pic img {
+        height: 240px;
+    }
+
+    .section {
+        padding: 0 15px;
+        margin: 45px auto;
+    }
+
+    .section-title {
+        margin-bottom: 25px;
+    }
+
+    .section-title h2 {
+        font-size: 27px;
+    }
+
+    .section-title p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .category-card {
+        min-width: 0;
+        border-radius: 12px;
+    }
+
+    .category-card img {
+        height: 140px;
+    }
+
+    .category-card div {
+        padding: 12px;
+    }
+
+    .category-card h3 {
+        font-size: 15px;
+        overflow-wrap: anywhere;
+    }
+
+    .category-card p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .offer {
+        margin: 40px 15px;
+        padding: 28px 22px;
+        display: block;
+        border-radius: 16px;
+    }
+
+    .offer h2 {
+        font-size: 25px;
+        line-height: 1.3;
+    }
+
+    .offer p {
+        font-size: 14px;
+        line-height: 1.6;
     }
 
     .offer .btn {
-        margin-top: 20px
+        margin-top: 18px;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .features div {
+        padding: 22px 12px;
+    }
+
+    .features i {
+        font-size: 26px;
+    }
+
+    .features h3 {
+        font-size: 15px;
+    }
+
+    .features p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    footer {
+        margin-top: 50px;
+        padding: 35px 18px 15px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 18px;
+    }
+
+    .footer-grid > div:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .footer-grid h3 {
+        font-size: 16px;
+    }
+
+    .footer-grid a,
+    .footer-grid p {
+        font-size: 13px;
+        line-height: 1.6;
+        overflow-wrap: anywhere;
+    }
+
+    .copyright {
+        font-size: 12px;
+        line-height: 1.6;
+        margin-top: 25px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+    header {
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .head-links {
+        gap: 10px;
+    }
+
+    .hero {
+        padding: 0 10px;
+    }
+
+    .hero-content {
+        padding: 28px 17px;
+    }
+
+    .hero h1 {
+        font-size: 31px;
+    }
+
+    .section {
+        padding: 0 10px;
+    }
+
+    .category-grid {
+        gap: 9px;
+    }
+
+    .category-card img {
+        height: 115px;
+    }
+
+    .category-card div {
+        padding: 9px;
+    }
+
+    .category-card h3 {
+        font-size: 13px;
+    }
+
+    .offer {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 23px 17px;
+    }
+
+    .features div {
+        padding: 18px 8px;
     }
 }
